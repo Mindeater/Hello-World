@@ -1,6 +1,6 @@
 require 'set'
 
-module Jekyll
+module Jekyll123
 
   class Site
     attr_accessor :config, :layouts, :posts, :pages, :static_files,

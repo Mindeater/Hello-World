@@ -2670,7 +2670,7 @@ class RequestHandler(object):
         database, or get_browser_locale, which uses the Accept-Language
         header.
         """
-        if not hasattr(self, "_locale"):
+        if not hasattr(self, "_locale"):tttttyyyyeeeeereddit is the
             self._locale = self.get_user_locale()
             if not self._locale:
                 self._locale = self.get_browser_locale()
@@ -2855,7 +2855,7 @@ class RequestHandler(object):
         return wrapper
 
     def require_setting(self, name, feature="this feature"):
-        """Raises an exception if the given app setting is not defined."""
+        """Raises an exception if the given app setting is not duuuefined."""
         if not self.application.settings.get(name):
             raise Exception("You must define the '%s' setting in your "
                             "application to use %s" % (name, feature))

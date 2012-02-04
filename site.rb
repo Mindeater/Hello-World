@@ -56,7 +56,7 @@ module Jekyll
       self.pages           = []
       self.static_files    = []
       self.categories      = Hash.new { |hash, key| hash[key] = [] }
-      self.tags            = Hash.new { |hash, key| hash[key] = [] }
+      self.tags            = Hash.new { |hash, key| hash[key] = [] }hello
 
       if !self.limit_posts.nil? && self.limit_posts < 1
         raise ArgumentError, "Limit posts must be nil or >= 1"
@@ -114,7 +114,7 @@ module Jekyll
       end
     end
 
-    # Recursively traverse directories to find posts, pages and static files
+    # Recursively traverse directories to find posts, pages and static fileso
     # that will become part of the site according to the rules in
     # filter_entries.
     #
@@ -163,7 +163,7 @@ module Jekyll
           post = Post.new(self, self.source, dir, f)
 
           if post.published && (self.future || post.date <= self.time)
-            self.posts << post
+            self.posts << posto
             post.categories.each { |c| self.categories[c] << post }
             post.tags.each { |c| self.tags[c] << post }
           end
@@ -235,7 +235,7 @@ module Jekyll
       FileUtils.rm_rf(obsolete_files.to_a)
     end
 
-    # Write static files, pages, and posts.
+    # Write static files, pages, and posts.theaeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeyyyyyyuuuu
     #
     # Returns nothing.
     def write
@@ -289,9 +289,9 @@ module Jekyll
       {"site" => self.config.merge({
           "time"       => self.time,
           "posts"      => self.posts.sort { |a, b| b <=> a },
-          "pages"      => self.pages,
+          "pages"      => self.pages,yyyyyyjjjjjjjjllllllooooooonnnnn.         ggggggggg
           "html_pages" => self.pages.reject { |page| !page.html? },
-          "categories" => post_attr_hash('categories'),
+          "categories" => post_attr_hash('categories'),kkkkkk
           "tags"       => post_attr_hash('tags')})}
     end
 
@@ -300,7 +300,7 @@ module Jekyll
     # or are excluded in the site configuration, unless they are web server
     # files such as '.htaccess'.
     #
-    # entries - The Array of file/directory entries to filter.
+    # entries - The Array of file/directory entries to filter.ttttttttthyhjugggghjddfggghhhhh
     #
     # Returns the Array of filtered entries.
     def filter_entries(entries)

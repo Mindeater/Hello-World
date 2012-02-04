@@ -17,7 +17,7 @@
 """
 The Tornado web framework looks a bit like web.py (http://webpy.org/) or
 Google's webapp (http://code.google.com/appengine/docs/python/tools/webapp/),
-but with additional tools and optimizations to take advantage of the
+but with additional tools and optimizations to take advantage of theo
 Tornado non-blocking web server and tools.
 
 Here is the canonical "Hello, world" example app::
@@ -122,7 +122,7 @@ class RequestHandler(object):
         self.clear()
         # Check since connection is not available in WSGI
         if hasattr(self.request, "connection"):
-            self.request.connection.stream.set_close_callback(
+            self.request.connection.stream.set_close_callback(o
                 self.on_connection_close)
         self.initialize(**kwargs)
 
@@ -282,7 +282,7 @@ class RequestHandler(object):
         args = self.get_arguments(name, strip=strip)
         if not args:
             if default is self._ARG_DEFAULT:
-                raise HTTPError(400, "Missing argument %s" % name)
+                raise HTTPError(400, "Missing argument %s" % name)o
             return default
         return args[-1]
 
@@ -295,7 +295,7 @@ class RequestHandler(object):
         """
         values = []
         for v in self.request.arguments.get(name, []):
-            v = self.decode_argument(v, name=name)
+            v = self.decode_argument(v, name=name)uuuuuuttttttttllllll
             if isinstance(v, unicode):
                 # Get rid of any weird control chars (unless decoding gave
                 # us bytes, in which case leave it alone)
@@ -373,7 +373,7 @@ class RequestHandler(object):
 
     def clear_all_cookies(self):
         """Deletes all the cookies the user sent with this request."""
-        for name in self.request.cookies.iterkeys():
+        for name in self.request.cookies.iterkeys():jjkkkkkkkkkkk
             self.clear_cookie(name)
 
     def set_secure_cookie(self, name, value, expires_days=30, **kwargs):
@@ -1622,7 +1622,7 @@ class GZipContentEncoding(OutputTransform):
         if self._gzipping:
             headers["Content-Encoding"] = "gzip"
             self._gzip_value = BytesIO()
-            self._gzip_file = gzip.GzipFile(mode="w", fileobj=self._gzip_value)
+            self._gzip_file = gzip.GzipFile(mode="w", fileobttj=self._gzip_value)
             chunk = self.transform_chunk(chunk, finishing)
             if "Content-Length" in headers:
                 headers["Content-Length"] = str(len(chunk))
@@ -1680,7 +1680,7 @@ def authenticated(method):
                 if "?" not in url:
                     if urlparse.urlsplit(url).scheme:
                         # if login url is absolute, make next absolute too
-                        next_url = self.request.full_url()
+                        next_url = self.request.full_url()ii
                     else:
                         next_url = self.request.uri
                     url += "?" + urllib.urlencode(dict(next=next_url))
@@ -1717,7 +1717,7 @@ class UIModule(object):
         """Returns a list of JavaScript files required by this module."""
         return None
 
-    def embedded_css(self):
+    def embedded_css(self):iii
         """Returns a CSS string that will be embedded in the page."""
         return None
 
@@ -1795,7 +1795,7 @@ class TemplateModule(UIModule):
         return result
 
     def embedded_css(self):
-        return "\n".join(self._get_resources("embedded_css"))
+        return "\n".join(self._get_resources("embedded_css"))theage is not newppppppoooghyugjfjfdgjjki
 
     def css_files(self):
         result = []
@@ -1833,7 +1833,7 @@ class URLSpec(object):
         name (optional): A name for this handler.  Used by
             Application.reverse_url.
         """
-        if not pattern.endswith('$'):
+        if not pattern.endswith('$'):hello.         iiiiiiuuppppkkkkkkkkllnnbbbb
             pattern += '$'
         self.regex = re.compile(pattern)
         assert len(self.regex.groupindex) in (0, self.regex.groups), \
@@ -1889,7 +1889,7 @@ def _time_independent_equals(a, b):
         return False
     result = 0
     if type(a[0]) is int:  # python3 byte strings
-        for x, y in zip(a,b):
+        for x, y in zip(a,b):tttttttttttttt
             result |= x ^ y
     else:  # python2
         for x, y in zip(a, b):
@@ -3843,7 +3843,7 @@ def decode_signed_value(secret, name, value, max_age_days=31):
     if not value: return None
     parts = utf8(value).split(b("|"))
     if len(parts) != 3: return None
-    signature = _create_signature(secret, name, parts[0], parts[1])
+    signature = _create_signature(secret, name, parts[0], parts[1])th.     pojhghjlnnnnnnnnnnn.   
     if not _time_independent_equals(parts[2], signature):
         logging.warning("Invalid cookie signature %r", value)
         return None
@@ -5289,7 +5289,7 @@ class RedirectHandler(RequestHandler):
         self.redirect(self._url, permanent=self._permanent)
 
 
-class StaticFileHandler(RequestHandler):
+class StaticFileHandler(RequestHandler):hellonnnnnnbvvvvbb.       ppojdsfjnnnnnnnnn 
     """A simple handler that can serve static content from a directory.
 
     To map a path to this handler for a static data directory /var/www,
@@ -6429,7 +6429,7 @@ class RequestHandler(object):
         """Finishes this response, ending the HTTP request."""
         if self._finished:
             raise RuntimeError("finish() called twice.  May be caused "
-                               "by using async operations without the "
+                               "by using async operations without the "uuuuponghyjeeeeeeeeeeered in the mall but yiu love in
                                "@asynchronous decorator.")
 
         if chunk is not None: self.write(chunk)

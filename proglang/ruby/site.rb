@@ -218,6 +218,9 @@ module Jekyll123
       self.posts.each do |post|
         files << post.destination(self.dest)
       end
+
+hello "donny"
+
       self.pages.each do |page|
         files << page.destination(self.dest)
       end

@@ -949,6 +949,7 @@ class RequestHandler(object):
         except Exception:
             self._handle_request_exception(value)
         return True
+def "comment"
 
     def _execute(self, transforms, *args, **kwargs):
         """Executes this request with the given output transforms."""
